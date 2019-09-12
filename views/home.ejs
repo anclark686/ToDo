@@ -1,0 +1,30 @@
+<%- include("header") -%>
+
+<div class="box" id="heading">
+  <h1> ToDo What You Gotta Do </h1>
+</div>
+
+
+
+<div class="dropdown navDiv">
+  <button class="btn btn-primary dropdown-toggle navButtons" id="mainList" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    All Lists
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <form class="" action="/" method="post">
+      <input type="text" name="newItem" placeholder="Create New or Jump to List" autocomplete="off">
+
+      <div class="dropdown-divider"></div>
+    </form>
+    <% lists.forEach(function(list) { %>
+      <a class="dropdown-item" href="/<%=list.name%>"><%=list.name%></a>
+    <% }) %>
+
+  </div>
+</div>
+
+<div class="clipboard">
+  <i class="fas fa-clipboard-list"></i>
+</div>
+
+<%- include("footer") -%>
